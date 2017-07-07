@@ -46,37 +46,37 @@
         imgArray:[
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/1.png',
             selected:false,
           },
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/2.jpg',
           },
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/3.jpg',
           },
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/4.jpg',
 
           },
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/1.jpg',
           },
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/2.jpg',
           },
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/3.jpg',
           },
           {
             x:0,
-            url:'static/logo.png',
+            url:'static/4.jpg',
           }
         ],
         itemList:[]
