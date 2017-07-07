@@ -8,13 +8,10 @@
       </div>
     </div>
     <div @click="clickLeft" class="arrowLeft verticalCenter horizaCenter">
-      <img src="../assets/logo.png" style="transform: rotate(180deg)">
+      <img src="" style="transform: rotate(180deg)">
     </div>
     <div @click="clickRight" class="arrowRight verticalCenter horizaCenter">
-      <img src="../assets/logo.png">
-    </div>
-    <div class="arrowBottom verticalCenter horizaCenter" >
-      <img src="../assets/logo.png" style="transform: rotate(90deg) scale(0.7)">
+      <img src="">
     </div>
     <div class="sliderBar horizaCenter">
       <div v-for="(item,index) in imgArray" @click="clickSliderCircle(index)"  class="circle" :class="{circleSelected:item.selected}">
