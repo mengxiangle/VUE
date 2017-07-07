@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-comp :nickname="msg"></my-comp>
+    </div>
+</body>
+<script>
+
+    Vue.component("myComp",{
+       props : ["nickname"],
+       template : "<h1>欢迎你，【{{nickname}}】来到我们的管理系统</h1>"
+    });
+
+    var app = new Vue({
+        data : {
+            msg : "孟祥乐"
+        }
+    }).$mount("#app");
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{msg | capitalize}}
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        "el" : "#app",
+        "data" :{
+            "msg" : "abcdefghijk"
+        },
+        "fillters" : {
+            "capitalize" : function (data) {
+                if(!data){
+                    return "";
+                }
+                return data.substr(0,1).toUpperCase() + data.substr(1)
+            }
+        }
+    })
+</script>
+</html>

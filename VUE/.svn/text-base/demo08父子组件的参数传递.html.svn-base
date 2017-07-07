@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div @myevent="reveice">{{loginUser}}</div>
+        <my-comp></my-comp>
+    </div>
+</body>
+<script>
+
+    Vue.component("myComp",{
+       "template" : "<div>回复我个度的的客户的话---{{loginUser.name}}<button @click='send'>点击</button></div>",
+        "data" : function () {
+            return {
+                loginUser : {
+                    id : 1,
+                    name : "mxl",
+                    password : "123456"
+                }
+            }
+        },
+        "methods" : {
+           send : function () {
+               alert(111);
+               this.$emit("myevent",this.loginUser);
+           }
+        }
+    });
+
+    var app = new Vue({
+        data : {
+            loginUser : ""
+        },
+        methods : {
+            reveice : function (msg) {
+                this.loginUser = msg;
+                alert("父组件")
+                //TODO
+            }
+        }
+    }).$mount("#app");
+</script>
+</html>

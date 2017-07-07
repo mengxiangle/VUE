@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div slot="head">
+            <page-header></page-header>
+        </div>
+        <div slot="section">
+            <page-section></page-section>
+        </div>
+        <div slot="right">
+            <page-right></page-right>
+        </div>
+        <div slot="foot">
+            <page-footer></page-footer>
+        </div>
+    </div>
+</body>
+<script>
+
+    Vue.component("myComp",{
+       "template" : "<div>" +
+                    "<slot name='head'>head</slot>" +
+                    "<slot name='section'>section</slot>" +
+                    "<slot name='right'>right</slot>" +
+                    "<slot name='foot'>foot</slot>" +
+                    "</div>"
+    });
+    Vue.component("page-header",{
+       "template" : "<div>head</div>"
+    });
+    Vue.component("page-section",{
+        "template" : "<div>section</div>"
+    });
+    Vue.component("page-right",{
+        "template" : "<div>right</div>"
+    });
+    Vue.component("page-footer",{
+        "template" : "<div>foot</div>"
+    });
+
+    var app = new Vue({
+
+    }).$mount("#app");
+</script>
+</html>

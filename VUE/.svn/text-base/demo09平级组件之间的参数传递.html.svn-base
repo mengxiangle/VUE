@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-comp1></my-comp1>
+        <my-comp2></my-comp2>
+    </div>
+</body>
+<script>
+
+    Vue.component("myComp1",{
+       "template" : "<div>平级之间组件的参数传递1{{user.name}}<button @click='send'>点击</button></div>",
+        "data" : function () {
+            return  {
+                user : {
+                    id : "1",
+                    name : "mxl",
+                    password : "123"
+                }
+            }
+        },
+        "methods" : {
+           send : function () {
+               console.info("开始触发事件");
+               bus.$emit("myevent",this.user)
+           }
+        }
+    });
+    Vue.component("myComp2",{
+       "template" : "<div>平级组件之间的参数传递2 {{ruser.name}}</div>",
+        "data" : function () {
+          return {
+              ruser : {}
+          }
+        },
+        "created" : function () {
+            var that = this;
+            bus.$on("myevent",function (msg) {
+                console.info("监听到事件");
+                that.ruser = msg
+            })
+        }
+    });
+    var bus = new Vue();
+    var app = new Vue({
+
+    }).$mount("#app");
+</script>
+</html>

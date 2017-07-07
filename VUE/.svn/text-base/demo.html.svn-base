@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg | reverseMsg}}</p>
+        <!--<button @click="reverseMsg">点击</button>-->
+    </div>
+</body>
+<script>
+    new Vue({
+        "el" : "#app",
+        "data" : {
+            "msg" : "Hello World!"
+        },
+//        "methods" : {
+//            "reverseMsg" : function () {
+//                this.msg = this.msg.split('').reverse().join('')
+//            }
+//        },
+        "filters" : {
+            "reverseMsg" : function (data) {
+                if(!data){
+                    return "";
+                }
+                return data.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</html>

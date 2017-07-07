@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-comp></my-comp>
+        <my-comp2></my-comp2>
+    </div>
+
+    <div id="app2">
+        <my-comp></my-comp>
+        <my-comp3></my-comp3>
+    </div>
+</body>
+<script>
+    Vue.component("myComp",{
+       "template" : "<h1>这是一个全局组件</h1>"
+    });
+    var app = new Vue({
+        "components" : {
+            "myComp2" : {
+                "template" : "<h2>这是一个局部组件</h2>"
+            }
+        }
+    }).$mount("#app");
+
+    var app = new Vue({
+        "components" : {
+            "myComp3" : {
+                "template" : "<h2>这是第二个局部组件</h2>"
+            }
+        }
+    }).$mount("#app2")
+</script>
+</html>

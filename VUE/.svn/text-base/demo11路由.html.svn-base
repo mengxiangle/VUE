@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <router-link to="/index">首页</router-link>
+                </li>
+                <li>
+                    <router-link to="/books">图书</router-link>
+                </li>
+                <li>
+                    <router-link to="/games">游戏</router-link>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <router-view></router-view>
+        </div>
+    </div>
+</body>
+<script>
+
+    var router = new VueRouter({
+       routes : [
+           {
+                path : "/index",
+                component : {
+                    template : "<h1>首页</h1>"
+                }
+           },
+           {
+               path : "/books",
+               component : {
+                   template : "<h1>图书列表</h1>"
+               }
+           },
+           {
+               path : "/games",
+               component : {
+                   template : "<h1>游戏列表</h1>"
+               }
+           }
+       ]
+    });
+    new Vue({
+        router : router
+    }).$mount("#app")
+</script>
+</html>

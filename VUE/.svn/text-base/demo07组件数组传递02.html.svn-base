@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-comp :nickname="msg" :level="2"></my-comp>
+    </div>
+</body>
+<script>
+    Vue.component("myComp",{
+       porps : {
+         "nickname" : {
+             type : String,
+             default : function () {
+                 return "超级管理员";
+             }
+         },
+         "level" : {
+             type : Number,
+             default :function () {
+                 return 0;
+             },
+             validator : function (value) {
+                 return value > 0;
+             }
+         }
+
+       },
+       template : "<h1>欢迎您，【{{nickname}}】来到管理系统，当前等级 === {{level}}</h1>"
+    });
+
+    var app = new Vue({
+        data : {
+            msg : "孟祥乐"
+        }
+    }).$mount("#app");
+</script>
+</html>

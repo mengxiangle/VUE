@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}<br>
+        <input type="text" v-model="username"> <br>
+        {{username}}<br>
+        <div v-bind:title="'title提示'">鼠标放上来看看</div>
+        <div v-bind:title="tab">鼠标放上来看看</div>
+
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el : "#app",
+        data : {
+            "msg" : "你好 世界",
+            "username" : "数据双向绑定",
+            "tab" : "data数据title提示"
+        }
+    })
+</script>
+</html>

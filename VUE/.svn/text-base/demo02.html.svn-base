@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置指令</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-text="msg"></div>
+        <div v-for="(b,index) in books">
+            {{b.id}}----{{b.name}}----{{b.price}}---{{index}}<br>
+        </div>
+        <div v-show="what">
+            vue内置指令的练习
+        </div>
+        <div v-if="age == 1">
+            一年级
+        </div>
+        <div v-else-if="age == 2">
+            二年级
+        </div>
+        <div v-else-if="age == 3">
+            三年级
+        </div>
+        <div v-else-if="age == 4">
+            四年级
+        </div>
+        <div v-else>
+            长大了
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el : "#app",
+        data : {
+            msg : "vue内置指令练习",
+            what : "true",
+            age : 5,
+            books : [
+                {
+                    id : "1",
+                    name : "vue从入门到放弃",
+                    price : 99
+                },
+                {
+                    id : "2",
+                    name : "vue从放弃到再认识",
+                    price : 100
+                },
+                {
+                    id : "3",
+                    name : "vue从再认识到再次放弃",
+                    price : 100
+                }
+            ]
+        }
+    })
+</script>
+</html>
